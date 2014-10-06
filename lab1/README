@@ -1,0 +1,21 @@
+﻿Implementujte ovládání displeje pomocí fronty.
+
+implmentujte funkce v souboru display.c
+- vDisplayInit inicializuje OLED dislplej a vytváří frontu pro výpis na displej
+- vDisplayPrintTask je proces, jež v parametru přijímá textový řetězec, pomocí vDisplayPutString jej vypíše na displey a pak čeká zpožďovací smyčkou __delay_ms ( <pocet ms> ), aby vám fungovala zpožďovací smyčka musíte si do display.c přidat:
+#define    FCY    16000000UL
+#include <libpic30.h>
+
+- vDisplayGatekeeperTask je proces čekající na frontě pro výpis na displej a obstarává samotný výpis pomocí funkce vOLEDPutString
+- vDisplayPutString je funkce, která v parametru přijímá řetězec a vkládá jej do fronty pro výpis
+
+vložte funkci vDisplayInit do funkce prvSetupHardware v main.c
+na příslušném místě ve funkci main vytvořte 2 tasky vpisující na displej a dejte jim stejnou prioritu, každému předejte jiný řetězec
+vytvořte proces vDisplayGatekeeperTask a nastavte mu vyšší prioritu než vypisujícím taskům
+program nahrajte do přípravku, obě zprávy by se měly vypisovat zhruba stejně často
+dejte jednomu z vypisujících procesů vyšší prioritu (ale stále nižší než je priorita gatekeeperu), pozorujte frekvenci výpisu jednotlivých zpráv
+vytvořte funkci vDisplayPrintTask2, bude identická s vDisplayPrintTask, ale k čekání bude používat funkci vTaskDelay
+vytvořte jeden proces z funkce vDisplayPrintTask s nižší prioritou a jeden z vDisplayPrintTask2 s vyšší prioritou
+pozorujte frekvenci výpisu jednotlivých zpráv
+původní funkci vDisplayPrintTask nahraďe vDisplayPrintTask2
+vytvořte z funkce vDisplayPrintTask 2 procesy a experimentujte s prioritami

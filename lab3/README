@@ -1,0 +1,3 @@
+﻿Nalezněte maximální hodnotu stacku pro oba tasky definované v stack.c.
+Nejprve použijte analytický přístup a poté experimentální přístup a své výsledky provnejte.
+Poznámka: Oba tasky vykonávají pořád ty samé úkony a jejich chování nijak nezávisí na okolí, proto je v tomto případě výsledek získaný experimentálním přístupem přesný. Toto je ale u vestavných systémů prakticky nevídané. Analytický přístup je tedy lepší, je-li proveditelný.

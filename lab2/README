@@ -1,0 +1,8 @@
+﻿Veškeré tasky jakožto i pomocné funkce si deklarujte v assignment.h a definujte v assignment.c. Stáhněte si keypad.zip a rozbalte do složky projects z prvního laboratorního cvičení. Otevřte tento projekt a vypracujte následující body:
+
+Vytvořte task, který bude mít proměnnou typu portBASE_TYPE, jednou za vteřinu ji inkrementuje a vypíše její hodnotu na displej .Použijte bussy waiting.
+Vytvořte task, který bude pomocí Eratosthenova síta hledat největší prvočíslo menší než 1000 a přesně jednou za sekundu jej bude vypisovat na displej (výpis nějak odlište od výpisu předchozího tasku). Číslo hledejte pokaždé znovu.
+Mačkáním šipek nahoru a dolů zvyšujte/snižujte prioritu prvního tasku. Informaci o změně priority vypište na displej. Implementujte jedním taskem s využitím blokujících volání.
+Mačkáním šipek doprava a doleva zvyšujte/snižujte prioritu druhého tasku. Informaci o změně priority vypište na displej. Implementujte jedním taskem s využitím blokujících volání.
+Při zmáčknutí prostředního tlačítka vytvořte task, který rozsvítí LED, 500 ms počká, zhasne LED a smaže sám sebe. Vyzkoušejte alespoň dvacetkrát. Pokud to nefunguje, zjistitě proč a proveďte nezbytné změny.
+Úloha musí bezchybně reagovat na všechny vstupy za všech okolností!
